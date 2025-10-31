@@ -1,0 +1,555 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RideWatt — Front-Wheel Regenerative Kit</title>
+  <meta name="description" content="Extend your EV bike range with a front-wheel regenerative hub modification kit. Easy retrofit, less charging, more earnings for delivery riders and commuters." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root {
+      --accent: #00bfa5;
+      --dark: #0f172a;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      --gradient: linear-gradient(135deg, #00bfa5 0%, #06b6d4 100%);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Background Hero Effect */
+    .hero-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background: linear-gradient(180deg, #e0f7fa 0%, #ffffff 100%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo .mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4);
+    }
+
+    nav a {
+      margin-left: 10px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 12px 0;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.lead {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 17px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+    }
+
+    .features {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .feature {
+      flex: 1 1 120px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(0, 191, 165, 0.08);
+      font-weight: 500;
+      color: var(--dark);
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    .feature:hover {
+      background: rgba(0, 191, 165, 0.15);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 191, 165, 0.5);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid rgba(15, 23, 42, 0.1);
+      color: var(--dark);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .video-frame {
+      width: 100%;
+      height: 240px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #d4faff, #f0faff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .how {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .step strong {
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .testimonials {
+      display: flex;
+      gap: 18px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 24px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .video-frame {
+        height: 200px;
+      }
+      .how {
+        grid-template-columns: 1fr;
+      }
+      .testimonials {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero-bg"></div>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">EV</div>
+        <div>
+          <div style="font-weight:700">EVRegen</div>
+          <div style="font-size:12px;color:var(--muted)">Front-wheel regenerative kits</div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a class="btn btn-ghost" href="#features">Features</a>
+        <a class="btn btn-ghost" href="#how">How it Works</a>
+        <a class="btn btn-primary" href="#contact">Book Demo</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="card">
+            <h1>Turn every ride into extra range.</h1>
+            <p class="lead">Retrofit your EV bike with our front-wheel hub generator to capture energy while riding — fewer charges, more deliveries, higher earnings.</p>
+
+            <div class="features" id="features">
+              <div class="feature">⚡ +20% Range</div>
+              <div class="feature">🔌 Plug-and-Play</div>
+              <div class="feature">🚴 Works with all EVs</div>
+            </div>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#contact">Book a Demo</a>
+              <a class="btn btn-ghost" href="#pricing">See Pricing</a>
+            </div>
+
+            <ul style="margin-top:14px;color:var(--muted);font-size:14px">
+              <li>Designed for delivery riders & commuters</li>
+              <li>Certified safety & durable components</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <div class="video-frame">Demo Video Coming Soon 🎥</div>
+            <div style="margin-top:12px">
+              <div style="font-weight:700">Ready to Upgrade?</div>
+              <div style="color:var(--muted);font-size:13px">Schedule an on-site demo or book installation at a partner garage.</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px" class="card">
+            <div style="font-weight:700">Contact</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:8px">WhatsApp us: <a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a></div>
+            <div style="color:var(--muted);font-size:13px">Email: <a href="mailto:support@evregen.in">support@evregen.in</a></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="how" class="how">
+        <div class="step card">
+          <strong>1. Capture</strong>
+          <p style="color:var(--muted);font-size:14px">Energy captured from the front hub during motion and braking.</p>
+        </div>
+        <div class="step card">
+          <strong>2. Convert</strong>
+          <p style="color:var(--muted);font-size:14px">Onboard controller converts kinetic energy to stable DC power.</p>
+        </div>
+        <div class="step card">
+          <strong>3. Store</strong>
+          <p style="color:var(--muted);font-size:14px">Power is routed to the battery — extending range and reducing stops.</p>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="card">
+          <div style="font-weight:700">Vijay — Delivery Rider</div>
+          <p style="color:var(--muted);font-size:14px">“Installed the kit last month — fewer charges and more deliveries. Worth every rupee!”</p>
+        </div>
+        <div class="card">
+          <div style="font-weight:700">Garage Partner</div>
+          <p style="color:var(--muted);font-size:14px">“Easy to fit, reliable, and customers love the range boost.”</p>
+        </div>
+      </section>
+
+      <section id="pricing" style="margin-top:40px">
+        <div class="card">
+          <h3 style="margin:0 0 8px">Pricing (Indicative)</h3>
+          <p style="color:var(--muted);margin:0 0 12px">Starter kit: ₹7,999 — Includes hub module, controller & basic install guide. Installation charges extra.</p>
+          <a class="btn btn-primary" href="#contact">Request Quote</a>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:40px">
+        <div class="card">
+          <h3>Book a Demo / Contact Us</h3>
+          <form id="leadForm" style="margin-top:10px;display:grid;gap:8px">
+            <input name="name" required placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #e6eef3" />
+            <input name="phone" required placeholder="Phone (WhatsApp)" style="padding:10px;border-radius:8px;border:1px solid #e6eef3" />
+            <input name="model" placeholder="EV model (optional)" style="padding:10px;border-radius:8px;border:1px solid #e6eef3" />
+            <textarea name="message" placeholder="How can we help?" rows="3" style="padding:10px;border-radius:8px;border:1px solid #e6eef3"></textarea>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <a class="btn btn-ghost" href="mailto:support@evregen.in">Email Us</a>
+            </div>
+            <div id="formMsg" style="color:var(--muted);font-size:13px"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="yr"></span> EVRegen — Built for riders. All rights reserved.</div>
+      <div style="margin-top:6px">Follow: <a href="#">Instagram</a> • <a href="#">YouTube</a> • <a href="#">LinkedIn</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var fm = e.target;
+      var name = fm.name.value.trim();
+      var phone = fm.phone.value.trim();
+      if (!name || !phone) {
+        document.getElementById('formMsg').textContent = 'Please enter name and phone.';
+        return;
+      }
+      var txt = encodeURIComponent('Lead from website:\nName: ' + name + '\nPhone: ' + phone + '\nModel: ' + fm.model.value + '\nMessage: ' + fm.message.value);
+      var wa = 'https://wa.me/919999999999?text=' + txt;
+      window.open(wa, '_blank');
+      document.getElementById('formMsg').textContent = 'Opening WhatsApp to complete request...';
+    });
+  </script>
+</body>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> RideWatt — Front-Wheel Regenerative Kit</title>
+  <meta name="description" content="Extend your EV bike range with a front-wheel regenerative hub modification kit. Easy retrofit, less charging, more earnings for delivery riders and commuters." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{--accent:#0ea5a3;--dark:#0f172a;--muted:#64748b;--bg:#f8fafc}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:var(--dark);line-height:1.4}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:28px;margin:12px 0}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
+    .card{background:white;border-radius:14px;padding:20px;box-shadow:0 6px 18px rgba(12,15,20,0.06)}
+
+    .features{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .feature{flex:1 1 120px;padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(14,165,163,0.06),transparent);min-width:120px}
+    .cta-row{display:flex;gap:12px;margin-top:16px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:2px solid rgba(15,23,42,0.06);color:var(--dark)}
+
+    .video-frame{width:100%;height:240px;border-radius:10px;background:linear-gradient(90deg,#e6fffa,#f0f9ff);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+
+    .how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .step{background:white;padding:14px;border-radius:10px;text-align:center}
+
+    .testimonials{display:flex;gap:12px;margin-top:18px}
+    .test{flex:1;background:white;padding:12px;border-radius:10px}
+
+    footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .video-frame{height:200px}
+      .how{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">RW</div>
+        <div>
+          <div style="font-weight:700">RideWatt</div>
+          <div style="font-size:12px;color:var(--muted)">Front-wheel regenerative kits</div>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a class="btn btn-ghost" href="#features">Features</a>
+        <a class="btn btn-ghost" href="#how">How it Works</a>
+        <a class="btn btn-primary" href="#contact">Book Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="card">
+            <h1>Turn every ride into extra range.</h1>
+            <p class="lead">Retrofit your EV bike with our front-wheel hub generator to capture energy while riding — fewer charges, more deliveries, higher earnings.</p>
+
+            <div class="features" id="features">
+              <div class="feature">+30% Range (typical)</div>
+              <div class="feature">Plug-and-play retrofit</div>
+              <div class="feature">Works with major EV models</div>
+            </div>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#contact">Book a Demo</a>
+              <a class="btn btn-ghost" href="#pricing">See Pricing</a>
+            </div>
+
+            <ul style="margin-top:14px;color:var(--muted);font-size:14px">
+              <li>Designed for delivery riders & commuters</li>
+              <li>Certified safety & durable components</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <div class="video-frame">Demo Video Placeholder</div>
+            <div style="margin-top:12px;display:flex;gap:8px;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-weight:700">Ready to Upgrade?</div>
+                <div style="color:var(--muted);font-size:13px">Schedule an on-site demo or book installation at a partner garage.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px" class="card">
+            <div style="font-weight:700">Contact</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:8px">WhatsApp us: <a href="https://wa.me/919999999999" target="_blank">+91 99999 99999</a></div>
+            <div style="color:var(--muted);font-size:13px">Email: <a href="mailto:support@evregen.in">support@evregen.in</a></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="how" class="how">
+        <div class="step card">
+          <strong>1. Capture</strong>
+          <p style="color:var(--muted);font-size:14px">Energy captured from the front hub during motion and braking.</p>
+        </div>
+        <div class="step card">
+          <strong>2. Convert</strong>
+          <p style="color:var(--muted);font-size:14px">Onboard controller converts kinetic energy to stable DC power.</p>
+        </div>
+        <div class="step card">
+          <strong>3. Store</strong>
+          <p style="color:var(--muted);font-size:14px">Power is routed to the battery — extending range and reducing stops.</p>
+        </div>
+      </section>
+
+      <section style="margin-top:18px">
+        <div class="testimonials">
+          <div class="test card">
+            <div style="font-weight:700">Vijay — Delivery Rider</div>
+            <p style="color:var(--muted);font-size:14px">“Installed the kit last month — fewer charges and more deliveries. Worth every rupee!”</p>
+          </div>
+          <div class="test card">
+            <div style="font-weight:700">Garage Partner</div>
+            <p style="color:var(--muted);font-size:14px">“Easy to fit, reliable, and customers love the range boost.”</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" style="margin-top:18px">
+        <div class="card">
+          <h3 style="margin:0 0 8px">Pricing (Indicative)</h3>
+          <p style="color:var(--muted);margin:0 0 12px">Starter kit: ₹7,999 — Includes hub module, controller & basic install guide. Installation charges extra.</p>
+          <a class="btn btn-primary" href="#contact">Request Quote</a>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:18px">
+        <div class="card">
+          <h3>Book a Demo / Contact Us</h3>
+          <form id="leadForm" style="margin-top:10px;display:grid;gap:8px">
+            <input name="name" required placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #e6eef3" />
+            <input name="phone" required placeholder="Phone (WhatsApp)" style="padding:10px;border-radius:8px;border:1px solid #e6eef3" />
+            <input name="model" placeholder="EV model (optional)" style="padding:10px;border-radius:8px;border:1px solid #e6eef3" />
+            <textarea name="message" placeholder="How can we help?" rows="3" style="padding:10px;border-radius:8px;border:1px solid #e6eef3"></textarea>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <a class="btn btn-ghost" href="mailto:support@evregen.in">Email Us</a>
+            </div>
+            <div id="formMsg" style="color:var(--muted);font-size:13px"></div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="yr"></span> EVRegen — Built for riders. All rights reserved.</div>
+      <div style="margin-top:6px">Follow: <a href="#">Instagram</a> • <a href="#">YouTube</a> • <a href="#">LinkedIn</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('leadForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var fm = e.target; var name=fm.name.value.trim(); var phone=fm.phone.value.trim();
+      if(!name || !phone){document.getElementById('formMsg').textContent='Please enter name and phone.';return}
+      // Compose message for WhatsApp lead (opens user's WhatsApp)
+      var txt = encodeURIComponent('Lead from website:\nName: '+name+'\nPhone: '+phone+'\nModel: '+fm.model.value+'\nMessage: '+fm.message.value);
+      var wa = 'https://wa.me/919999999999?text='+txt;
+      window.open(wa,'_blank');
+      document.getElementById('formMsg').textContent='Opening WhatsApp to complete request...';
+    });
+  </script>
+</body>
+</html>
