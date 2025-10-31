@@ -68,7 +68,7 @@
 
     .logo-text div:first-child {
       font-weight: 800;
-      font-size: 28px; /* Increased RideWatt title font size */
+      font-size: 32px; /* Increased RideWatt title font size */
       letter-spacing: 0.5px;
     }
 
@@ -155,16 +155,15 @@
       font-weight: 500;
     }
 
-    .video-frame {
+    .bike-image {
       width: 100%;
-      height: 240px;
       border-radius: 12px;
-      background: linear-gradient(90deg, #e6fffa, #f0f9ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-weight: 600;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .bike-image:hover {
+      transform: scale(1.03);
     }
 
     .how {
@@ -205,42 +204,31 @@
       border-top: 1px solid rgba(15, 23, 42, 0.08);
     }
 
-    /* 📱 Mobile Responsive Styles */
     @media (max-width: 900px) {
       header {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
       }
-
       nav {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
       }
-
       .hero {
         grid-template-columns: 1fr;
       }
-
-      .video-frame {
-        height: 200px;
-      }
-
       .how {
         grid-template-columns: 1fr;
       }
-
       .testimonials {
         flex-direction: column;
       }
-
       h1 {
         font-size: 28px;
       }
-
       .logo-text div:first-child {
-        font-size: 26px;
+        font-size: 28px;
       }
     }
   </style>
@@ -285,7 +273,8 @@
 
         <aside>
           <div class="card">
-            <div class="video-frame">Demo Video Coming Soon 🎥</div>
+            <img src="bike.jpg" alt="RideWatt Electric Bike Diagram" class="bike-image">
+            <p style="color:var(--muted);font-size:13px;text-align:center;margin-top:8px;">RideWatt regenerative hub system — front and rear motor energy flow.</p>
           </div>
 
           <div style="margin-top:12px" class="card">
@@ -327,7 +316,7 @@
       <section id="pricing" style="margin-top:24px;">
         <div class="card">
           <h3 style="margin:0 0 8px">Pricing (Indicative)</h3>
-          <p style="color:var(--muted);margin:0 0 12px">Starter kit: ₹7,999 — Includes hub module, controller & install guide (installation extra).</p>
+          <p style="color:var(--muted);margin:0 0 12px">Starter kit: ₹8,000 - ₹10,000  — Includes hub module, controller & install guide (installation extra).</p>
           <a class="btn btn-primary" href="#contact">Request Quote</a>
         </div>
       </section>
